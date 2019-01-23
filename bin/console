@@ -2,6 +2,7 @@
 
 require "bundler/setup"
 require "capybara_scraper"
+require 'capybara/poltergeist'
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -11,4 +12,5 @@ require "capybara_scraper"
 # Pry.start
 
 require "irb"
+@browser = CapybaraScraper::Browser.new.visit("https://www.islands.com/top-20-best-islands-to-live-on/")
 IRB.start(__FILE__)

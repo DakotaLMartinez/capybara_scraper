@@ -1,4 +1,5 @@
 require "capybara_scraper/version"
+require "capybara_scraper/browser"
 
 module CapybaraScraper
   class Error < StandardError; end
