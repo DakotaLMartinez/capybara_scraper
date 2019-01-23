@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capybara_scraper (0.1.1)
+    capybara_scraper (0.1.2)
       capybara
       poltergeist
 
