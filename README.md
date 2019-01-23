@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-```@browser = CapybaraScraper::Browser.new.visit("https://www.islands.com/top-20-best-islands-to-live-on/")```
+```
+@browser = CapybaraScraper::Browser.new.visit("https://www.islands.com/top-20-best-islands-to-live-on/")
+@browser.page.find("#article-body") #=> returns Nokogiri object corresponding to node
+```
 
 ## Development
 
