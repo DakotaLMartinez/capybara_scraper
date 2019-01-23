@@ -22,9 +22,18 @@ Or install it yourself as:
 
 ## Usage
 
+To use this gem you'll want to `require 'capybara_scraper'` and then create a Browser object which you can call `.visit` on to go to specific urls. Once you visit a page, you can call `.page` on the browser object and that will return a Nokogiri node structure for the html of the page.
+
 ```
-@browser = CapybaraScraper::Browser.new.visit("https://www.islands.com/top-20-best-islands-to-live-on/")
-@browser.page.find("#article-body") #=> returns Nokogiri object corresponding to node
+@browser = CapybaraScraper::Browser.new
+@browser.visit("https://www.islands.com/top-20-best-islands-to-live-on/")
+@browser.page.css("#article-body") #=> returns Nokogiri data structure for nodes matching the id 'article-body'
+```
+
+If you're transitioning from using Nokogiri without integrating capybara and poltergeist, you can do something like this as well:
+
+```
+doc = CapybaraScraper::Browser.new.visit("https://www.islands.com/top-20-best-islands-to-live-on/").page
 ```
 
 ## Development
