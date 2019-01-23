@@ -27,7 +27,8 @@ To use this gem you'll want to `require 'capybara_scraper'` and then create a Br
 ```
 @browser = CapybaraScraper::Browser.new
 @browser.visit("https://www.islands.com/top-20-best-islands-to-live-on/")
-@browser.page.css("#article-body") #=> returns Nokogiri data structure for nodes matching the id 'article-body'
+doc = @browser.page #=> returns HTMl doc parsed by Nokogiri
+doc.css("#article-body") #=> returns Nokogiri data structure for nodes matching the id 'article-body'
 ```
 
 If you're transitioning from using Nokogiri without integrating capybara and poltergeist, you can do something like this as well:
